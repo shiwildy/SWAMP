@@ -36,15 +36,23 @@ def start_apache():
     print(f"{Fore.GREEN}Apache started in background.{Style.RESET_ALL}")
 
 def start_mysql():
+    # mysql_command = (
+    #     'c:\\swamp\\bin\\mysql\\bin\\mysqld.exe '
+    #     '--datadir=c:\\swamp\\etc\\config\\mysql\\ '
+    #     '--log-error=c:\\swamp\\logs\\mysql\\mysql_error.log '
+    #     '--general-log=1 '
+    #     '--general-log-file=c:\\swamp\\logs\\mysql\\general_query.log '
+    #     '--slow-query-log=1 '
+    #     '--slow-query-log-file=c:\\swamp\\logs\\mysql\\slow_query.log '
+    #     '--long-query-time=2 '
+    #     '--log-bin=c:\\swamp\\logs\\mysql\\binlog'
+    # )
+
+    # >> Disable query log
     mysql_command = (
         'c:\\swamp\\bin\\mysql\\bin\\mysqld.exe '
         '--datadir=c:\\swamp\\etc\\config\\mysql\\ '
         '--log-error=c:\\swamp\\logs\\mysql\\mysql_error.log '
-        '--general-log=1 '
-        '--general-log-file=c:\\swamp\\logs\\mysql\\general_query.log '
-        '--slow-query-log=1 '
-        '--slow-query-log-file=c:\\swamp\\logs\\mysql\\slow_query.log '
-        '--long-query-time=2 '
         '--log-bin=c:\\swamp\\logs\\mysql\\binlog'
     )
     run_background(mysql_command)
